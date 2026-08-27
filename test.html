@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>人格测试 · MBTI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="logo">MBTI<span>·</span>人格测试</div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="test.html" class="active">开始测试</a>
+        <a href="types.html">16 种人格</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container test-wrap">
+    <!-- 开始页 -->
+    <section id="intro" class="result-card">
+      <div class="label">P E R S O N A L I T Y &nbsp; T E S T</div>
+      <h2 style="font-size:26px;margin:10px 0 8px;">测一测你的人格类型</h2>
+      <p class="result-overview" style="text-align:center;">
+        共 <b id="totalQ">48</b> 道题，覆盖 MBTI 四个维度。凭第一直觉作答最准，约需 2–3 分钟。
+        完成后会立刻显示你的人格类型，并可查看专属解读。
+      </p>
+      <div class="result-actions">
+        <button class="btn btn-primary-d" onclick="startTest()">开始测试</button>
+      </div>
+    </section>
+
+    <!-- 答题页 -->
+    <section id="quiz" style="display:none;">
+      <div class="progress-row">
+        <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+        <div class="progress-text" id="progText">1 / 48</div>
+      </div>
+      <div class="question-card">
+        <div class="qindex" id="qIndex">第 1 题</div>
+        <div class="qtext" id="qText">题目</div>
+        <div class="options" id="qOptions"></div>
+        <div class="nav-btns">
+          <button class="btn btn-line" id="prevBtn" onclick="prevQ()" disabled>上一题</button>
+          <button class="btn btn-primary-d" id="nextBtn" onclick="nextQ()" disabled>下一题</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 结果页 -->
+    <section id="result" class="result-wrap" style="display:none;">
+      <div class="result-card">
+        <div class="label">你 的 人 格 类 型</div>
+        <div class="result-code" id="rCode">INTJ</div>
+        <div class="result-name" id="rName">建筑师</div>
+        <div class="result-tag" id="rTag"></div>
+        <div class="result-overview" id="rOverview"></div>
+        <div class="result-actions">
+          <button id="rDetailBtn" class="btn btn-primary-d" onclick="openPaywall()">查看您的「建筑师」人格类型介绍 →</button>
+          <button class="btn btn-line" onclick="location.reload()">重新测试</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 付费墙弹窗（本地演示） -->
+  <div class="modal-overlay" id="payModal" style="display:none;">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closePaywall()">×</button>
+      <div class="modal-badge">🔒 专属解读</div>
+      <h3 id="payTitle">解锁你的人格专属解读</h3>
+      <p class="modal-desc">含完整性格概述、优势短板、适合职业与相处建议。一次解锁，长期可看。</p>
+      <div class="pay-price"><span class="cur">¥</span><span class="num">9.9</span><span class="old">原价 ¥19.9</span></div>
+      <div class="pay-methods">
+        <div class="pay-method sel"><span>💚</span> 微信支付</div>
+        <div class="pay-method"><span>🔵</span> 支付宝</div>
+      </div>
+      <button class="btn btn-primary-d pay-confirm" id="payConfirm" onclick="doPay()">确认支付 ¥9.9</button>
+      <div class="pay-tip">演示环境：点击即模拟支付成功，不会产生任何真实扣款</div>
+    </div>
+  </div>
+
+  <footer class="footer">MBTI 人格测试 · 结果仅供参考与自我探索</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/test.js"></script>
+</body>
+</html>
