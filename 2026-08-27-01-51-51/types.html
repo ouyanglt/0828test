@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16 种人格类型 · MBTI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="logo">MBTI<span>·</span>人格测试</div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="test.html">开始测试</a>
+        <a href="types.html" class="active">16 种人格</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container section">
+    <h2>16 种人格类型</h2>
+    <p class="sub">点开任意一种，即可一眼看懂它的性格、优势、注意点与相处建议</p>
+
+    <div class="types-grid" id="typesGrid"></div>
+
+    <!-- 详情面板 -->
+    <div class="detail" id="detail">
+      <h3 id="dCode"></h3>
+      <div class="d-tag" id="dTag"></div>
+      <div class="d-overview" id="dOverview"></div>
+
+      <h4>✅ 你的优势</h4>
+      <ul id="dStrength"></ul>
+
+      <h4>⚠️ 需要注意</h4>
+      <ul id="dWatchout"></ul>
+
+      <h4>💼 适合的职业方向</h4>
+      <ul id="dCareer"></ul>
+
+      <h4>💗 人际 / 恋爱建议</h4>
+      <div class="d-rel" id="dRelation"></div>
+
+      <div class="d-back">
+        <a href="test.html" class="btn btn-primary-d">测一测我的人格 →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">MBTI 人格测试 · 内容用于自我了解与趣味参考</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/types.js"></script>
+</body>
+</html>
